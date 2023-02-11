@@ -17,11 +17,19 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '19'
+      - name: Install Rust
+        run: rustup toolchain install stable --component llvm-tools-preview
+      - name: Install trunk
+        run: cargo install trunk
+      - name: Add wasm build target
+        run: rustup target add wasm32-unknown-unknown
+      - name: build Rust
+        run: trunk build --release
+      - name: Switch path
+        run: cd dist
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
