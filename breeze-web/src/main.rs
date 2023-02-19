@@ -1,20 +1,23 @@
 use yew::{function_component, Html, html};
+use yew_router::{BrowserRouter, Switch};
 
-use components::{header::Header, index::Index};
+use router::{Route, switch};
 
 mod components;
+mod router;
+mod pages;
+
 
 #[function_component]
-fn App() -> Html {
+fn app() -> Html {
     html! {
-        <body class="wrapper">
-        <Header />
-        <Index />
-        </body>
+        <BrowserRouter>
+            <Switch<Route> render={switch} />
+        </BrowserRouter>
     }
 }
 
 
 fn main() {
-    yew::Renderer::<App>::new().render();
+    yew::Renderer::<app>::new().render();
 }

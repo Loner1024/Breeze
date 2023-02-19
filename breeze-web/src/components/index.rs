@@ -1,4 +1,7 @@
 use yew::{function_component, Html, html};
+use yew_router::components::Link;
+
+use crate::router::Route;
 
 #[function_component]
 pub fn Index() -> Html {
@@ -7,11 +10,11 @@ pub fn Index() -> Html {
             <section class="article-list">
                 <article>
                     <h2>
-                        <a href="#">{ "Title" }</a>
+                        <Link<Route> to={Route::Post}>{ "Title" }</Link<Route>>
                         <span>{ "30度" }</span>
                     </h2>
                     <div class="excerpt">
-                        <p>{ "Summary" }</p>
+                        <p>{ "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae exercitationem labore molestiae qui quia! Atque doloribus eius enim modi quaerat repellendus! Asperiores culpa dolorem doloremque libero quod reprehenderit sed tempora." }</p>
                     </div>
                     <div class="meta">
                         <span class="item"><i class="iconfont icon-calendar"></i>{ "time" }</span>

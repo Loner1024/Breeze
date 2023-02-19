@@ -1,11 +1,13 @@
-use yew::{function_component, Html, html};
+use yew::{function_component, Html, html, classes};
+use yew_router::components::Link;
+use crate::router::Route;
 
 #[function_component]
 pub fn Header() -> Html {
     html! {
 <header>
     <a class="logo">
-        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80"/>
+        <img alt="avatar" src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&h=800&q=80" />
     </a>
     <div class="description">
         <h1>{ "Uniiiiiiiiix" }</h1>
@@ -15,7 +17,10 @@ pub fn Header() -> Html {
                 <div class="bitcron_nav">
                     <div class="mixed_site_nav_wrap site_nav_wrap">
                         <ul class="mixed_site_nav site_nav sm sm-base">
-                            <li><a class="selected active current nav__item" href="/"> { "首页" }</a>
+                            <li>
+                                <Link<Route> to={Route::App} classes={ "selected active current nav__item" }>
+                                    { "首页" }
+                                </Link<Route>>
                             </li>
                             <li><a class=" nav__item" href="/archive">{ "归档" }</a></li>
                             <li><a class=" nav__item" href="#">{ "管理" }</a></li>
