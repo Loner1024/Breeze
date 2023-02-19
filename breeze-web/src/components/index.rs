@@ -1,4 +1,4 @@
-use yew::{function_component, Html, html, Properties, use_effect};
+use yew::{function_component, Html, html, Properties};
 use yew_router::components::Link;
 use yew_hooks::{use_async_with_options, use_state_ptr_eq, UseAsyncOptions};
 use std::rc::Rc;

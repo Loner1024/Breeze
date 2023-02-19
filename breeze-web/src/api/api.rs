@@ -33,7 +33,7 @@ impl ApiRequest {
         Self(Request::get(url.as_ref()))
     }
 
-    pub fn json(self, json: &impl Serialize) -> Self {
+    pub fn _json(self, json: &impl Serialize) -> Self {
         Self(self.0.json(json).unwrap())
     }
 
