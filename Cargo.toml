@@ -1,5 +1,6 @@
 [workspace]
 members = [
     "breeze-web",
-    "server"
+    "server",
+    "model"
 ]

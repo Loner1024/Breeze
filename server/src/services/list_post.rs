@@ -1,6 +1,6 @@
 use axum::Json;
 use axum::response::IntoResponse;
-use crate::model::{PostList, PostListItem};
+use model::{PostList, PostListItem};
 use crate::errors::Result;
 use serde_json::json;
 

@@ -6,10 +6,11 @@ use router::{Route, switch};
 mod components;
 mod router;
 mod pages;
+mod api;
 
 
 #[function_component]
-fn app() -> Html {
+fn App() -> Html {
     html! {
         <BrowserRouter>
             <Switch<Route> render={switch} />
@@ -19,5 +20,5 @@ fn app() -> Html {
 
 
 fn main() {
-    yew::Renderer::<app>::new().render();
+    yew::Renderer::<App>::new().render();
 }
