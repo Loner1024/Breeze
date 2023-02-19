@@ -1,12 +1,12 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize)]
+#[derive(Serialize, PartialEq, Deserialize)]
 pub struct PostList {
     pub count: usize,
     pub data: Vec<PostListItem>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, PartialEq, Deserialize, Clone)]
 pub struct PostListItem {
     pub id: i64,
     pub title: String,

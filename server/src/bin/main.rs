@@ -1,6 +1,4 @@
-mod services;
-mod model;
-mod errors;
+use server::services;
 
 use axum::{
     routing::get,
