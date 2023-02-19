@@ -17,7 +17,7 @@ pub fn Index() -> Html {
         {
             let posts = posts.clone();
             async move {
-                let p: PostList = ApiRequest::get("http://127.0.0.1:3000/list").json_response().await?;
+                let p: PostList = ApiRequest::get("https://breeze-production.up.railway.app/list").json_response().await?;
                 posts.set(p.data);
                 Ok::<_, Rc<ApiError>>(())
             }
