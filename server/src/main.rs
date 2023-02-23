@@ -14,6 +14,7 @@ async fn main() {
     // build our application with a single route
     let app = Router::new()
         .route("/list", get(services::list_post))
+        .route("/post/:id", get(services::post))
         .layer(cors);
 
     // run it with hyper on localhost:3000

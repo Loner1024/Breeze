@@ -1,14 +1,20 @@
-use yew::{function_component, Html, html};
+use yew::{function_component, Html, html, Properties};
 
 use crate::components::{Header, Index, Post, Footer};
 
+#[derive(Properties, PartialEq)]
+pub struct ArticlePageProps {
+    pub id: i64,
+}
+
 #[function_component]
-pub fn ArticlePage() -> Html {
+pub fn ArticlePage(props: &ArticlePageProps) -> Html {
+    let ArticlePageProps { id } = props;
     html!(
         <div>
             <body class="wrapper">
             <Header />
-            <Post />
+            <Post id = { id } />
             </body>
             <Footer />
         </div>

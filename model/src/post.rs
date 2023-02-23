@@ -13,3 +13,11 @@ pub struct PostListItem {
     pub summary: String,
     pub create_time: i64,
 }
+
+#[derive(Serialize, Deserialize, PartialEq, Default)]
+pub struct PostDetail {
+    pub id: i64,
+    pub title: String,
+    pub content: String,
+    pub create_time: i64,
+}

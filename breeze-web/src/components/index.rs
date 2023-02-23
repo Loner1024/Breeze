@@ -59,7 +59,7 @@ fn ListCard(props: &ListCardProps) -> Html {
     html! {
             <article key={data.id}>
                 <h2>
-                    <Link<Route> to={Route::Post}>{ &data.title }</Link<Route>>
+                    <Link<Route> to={Route::Post{ id: data.id }}>{ &data.title }</Link<Route>>
                     <span>{ "30度" }</span>
                 </h2>
                 <div class="excerpt">

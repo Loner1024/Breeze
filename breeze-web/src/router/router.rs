@@ -6,14 +6,14 @@ use crate::pages::{Home, ArticlePage};
 pub enum Route {
     #[at("/")]
     App,
-    #[at("/post")]
-    Post,
+    #[at("/post/:id")]
+    Post { id: i64 },
 }
 
 
 pub fn switch(routes: Route) -> Html {
     match routes {
         Route::App => html!(<Home />),
-        Route::Post => html!(<ArticlePage />),
+        Route::Post { id } => html!(<ArticlePage id={ id }  />),
     }
 }
