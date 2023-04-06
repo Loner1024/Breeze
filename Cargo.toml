@@ -2,5 +2,6 @@
 members = [
     "breeze-web",
     "server",
-    "model"
+    "model",
+    "static-generate"
 ]

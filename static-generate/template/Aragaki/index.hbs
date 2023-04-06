@@ -1,0 +1,21 @@
+{{#*inline "index"}}
+    <section class="article-list">
+        <!--        {-->
+        <!--        for posts.iter().map(|item| html!{-->
+        <!--        <ListCard data={ item.clone() }/>-->
+        <!--        })-->
+        <!--        }-->
+    </section>
+    <section class="list-pager">
+        <a class="pre" href="#" style="display:inline-flex; justify-items: center">
+            <iconpark-icon name="left"></iconpark-icon>
+            上一页
+        </a>
+        <a class="next" href="#" style="display:inline-flex; justify-items: center">
+            <i class="fa-thin fa-right"></i>
+            下一页
+        </a>
+        <div class="clear"></div>
+    </section>
+{{/inline}}
+{{> (lookup this "parent")}}

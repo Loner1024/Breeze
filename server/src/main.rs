@@ -5,9 +5,13 @@ use axum::{
     routing::get,
     Router,
 };
+use sea_orm::{Database, DbErr};
 
 #[tokio::main]
 async fn main() {
+    connect_db().await.expect("connect db error");
+
+
     let cors = CorsLayer::new()
         .allow_methods(Any)
         .allow_origin(Any);
@@ -22,4 +26,11 @@ async fn main() {
         .serve(app.into_make_service())
         .await
         .unwrap();
+}
+
+async fn connect_db() -> Result<(), DbErr> {
+    const DATABASE_URL: &str = "postgres://postgres:123456@localhost:5432/blog";
+    let db = Database::connect(DATABASE_URL).await?;
+
+    Ok(())
 }

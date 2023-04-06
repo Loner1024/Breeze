@@ -16,7 +16,7 @@ pub fn Header() -> Html {
             <div class="bitcron_nav_container">
                 <div class="bitcron_nav">
                     <div class="mixed_site_nav_wrap site_nav_wrap">
-                        <ul class="mixed_site_nav site_nav sm sm-base">
+                        <ul class="mixed_site_nav site_nav sm sm-base.hbs">
                             <li>
                                 <Link<Route> to={Route::App} classes={ "selected active current nav__item" }>
                                     { "首页" }
